@@ -94,13 +94,14 @@ combined_plots <- ggarrange(
 
 # Save plot
 ggsave(file = here("output/fig/final/pdf/fig6.pdf"),
-       plot = combined_plots,
-       width = 10, height = 6,
+       plot = dend + theme(legend.position = "none"),
+       width = 6, height = 5,
        bg = "white")
-ggsave(file = here("output/fig/final/eps/fig6.eps"), plot = combined_plots,
-       width = 10, height = 6,
+ggsave(file = here("output/fig/final/eps/fig6.eps"),
+       plot = dend + theme(legend.position = "none"),
+       width = 6, height = 5,
        device = cairo_ps)
 
-emf(here("output/fig/final/emf/fig6.emf"), width = 10, height = 6)
-grid.draw(combined_plots)
+emf(here("output/fig/final/emf/fig6.emf"), width = 6, height = 5)
+grid.draw(dend + theme(legend.position = "none"))
 dev.off()
